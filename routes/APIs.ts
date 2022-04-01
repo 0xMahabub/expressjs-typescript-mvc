@@ -19,4 +19,11 @@ router.get('/', (req: Request, res: Response) => {
 // Test Controller
 router.use('/test', controllers.testController);
 
+// Auth Controllers [Group :=> Auth]
+router.use('/auth', [
+  controllers.auth.registerController,
+  controllers.auth.loginController,
+  controllers.userController,
+]);
+
 export default router;
